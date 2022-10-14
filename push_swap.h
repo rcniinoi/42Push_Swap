@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:01:37 by rchiewli          #+#    #+#             */
-/*   Updated: 2022/10/15 02:25:22 by rchiewli         ###   ########.fr       */
+/*   Updated: 2022/10/15 03:34:04 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,9 @@ void	ft_tmpstarter(t_tmp *tmp);
 void	ft_push(t_hua *hua, t_stk *huafrom, t_stk *huato, int mode);
 void	ft_pa(t_hua	*hua, int mode);
 void	ft_pb(t_hua	*hua, int mode);
+void	ft_rerotate(t_stk *huax, t_stk *end);
+void	ft_rra(t_hua *hua, int count, int mode);
+void	ft_rrb(t_hua *hua, int count, int mode);
+void	ft_rrr(t_hua *hua)
 
 #endif

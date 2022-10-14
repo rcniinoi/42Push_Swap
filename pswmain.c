@@ -20,7 +20,13 @@ int	main(int argc, char **argv)
 	hua->huaa = ft_stkabini(ray->realarray, wcount);
 
 
-	ft_rr(hua);
+	ft_rra(hua, hua->aval, 1);
+	ft_rra(hua, hua->aval, 1);
+	ft_pb(hua, 1);
+	ft_pb(hua, 1);
+	ft_printlst(hua->huaa);
+	ft_printlst(hua->huab);
+	ft_rrb(hua, hua->bval, 1);
 	ft_printlst(hua->huaa);
 	ft_printlst(hua->huab);
 	// free (hua);

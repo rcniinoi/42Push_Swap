@@ -6,7 +6,7 @@
 #    By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/01 15:09:02 by rchiewli          #+#    #+#              #
-#    Updated: 2022/10/15 01:51:05 by rchiewli         ###   ########.fr        #
+#    Updated: 2022/10/15 03:27:13 by rchiewli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ FILES	= pswmain.c \
 			./instruc/core_ins.c\
 			./instruc/pswinst1.c\
 			./instruc/pswinst2.c\
+			./instruc/pswinst3.c\
 			./pushutil/pswlstmanager.c\
 			./pushutil/pswlstmanager2.c\
 			./pushutil/util1.c\

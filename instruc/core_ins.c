@@ -37,6 +37,18 @@ void	ft_rotate(t_stk *huax, t_stk *end)
 	end->next = NULL;
 }
 
+void	ft_rerotate(t_stk *huax, t_stk *end)
+{
+	if (huax == NULL || end == NULL || end->prev == NULL)
+		return ;
+	huax->prev = end;
+	end->next = huax;
+	huax = end;
+	end = end->prev;
+	end->next = NULL;
+	huax->prev = NULL;
+}
+
 void	ft_push(t_hua *hua, t_stk *huafrom, t_stk *huato, int mode)
 {
 	t_tmp	stmp;
