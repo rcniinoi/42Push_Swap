@@ -6,12 +6,12 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:01:37 by rchiewli          #+#    #+#             */
-/*   Updated: 2022/10/13 18:23:24 by rchiewli         ###   ########.fr       */
+/*   Updated: 2022/10/15 02:25:22 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSHS_WAP_H
+# define PUSH_SWAP_H
 
 # include <unistd.h>
 # include <string.h>
@@ -23,7 +23,6 @@
 # include <sys/wait.h>
 # include <sys/types.h>
 # include <errno.h>
-# include "libftfinal/gnl5/get_next_line.h"
 # include "dt_dpf/ft_printf.h"
 # include <time.h>
 # include "libftfinal/libft.h"
@@ -55,5 +54,43 @@ typedef struct s_tmp
 	struct s_stk	*tmp4;
 }	t_tmp;
 
+typedef struct s_array
+{
+	int		*realarray;
+	int		*fakearray;
+	char	**charbuffer;
+
+}	t_array;
+
+int		ft_printerrorexit(void);
+int		ft_wordcountall(int argc, char **argv);
+void	ft_printintarray(int *array, int count);
+void	ft_freestrstr(char **str);
+void	ft_printlst(t_stk *stk);
+int		*ft_quick(int *array, int low, int high);
+char	**ft_argumontobuffer(int argc, char **argv, int count);
+int		*ft_atoisembe(char **str, int count);
+int		ft_errchk(char **str, int count);
+int		ft_chkintdup(int *array, int count);
+int		ft_errorchkall(int	wcount, t_array	*ray);
+t_stk	*ft_lstlast2(t_stk *lst);
+t_stk	*ft_lstfirst(t_stk *lst);
+t_stk	*ft_lstaddklang(t_stk *front, t_stk *back);
+void	ft_t_stkini(t_stk *new);
+void	ft_huastarter(t_hua *hua, int count);
+t_stk	*ft_stkabini(int *sembe, int count);
+void	ft_swap(t_stk	*huax);
+void	ft_swapab(int *a, int *b);
+void	ft_sa(t_hua	*hua, int	mode);
+void	ft_sb(t_hua	*hua, int	mode);
+void	ft_ss(t_hua	*hua);
+void	ft_rotate(t_stk *huax, t_stk *end);
+void	ft_ra(t_hua	*hua, int count, int mode);
+void	ft_rb(t_hua	*hua, int count, int mode);
+void	ft_rr(t_hua	*hua);
+void	ft_tmpstarter(t_tmp *tmp);
+void	ft_push(t_hua *hua, t_stk *huafrom, t_stk *huato, int mode);
+void	ft_pa(t_hua	*hua, int mode);
+void	ft_pb(t_hua	*hua, int mode);
 
 #endif

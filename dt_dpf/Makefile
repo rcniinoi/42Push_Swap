@@ -6,7 +6,7 @@
 #    By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/01 15:09:02 by rchiewli          #+#    #+#              #
-#    Updated: 2022/10/13 17:52:16 by rchiewli         ###   ########.fr        #
+#    Updated: 2022/10/13 19:08:20 by rchiewli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=  libftprintf.a
 CFLAGS	= -Wall -Werror -Wextra -c
 FILES	= ft_printf.c\
 			libftmodified.c\
-			ft_itoa.c
+			util.c
 
 OBJ	= $(FILES:%.c=%.o)
 

@@ -6,13 +6,13 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 16:15:06 by rchiewli          #+#    #+#             */
-/*   Updated: 2022/10/13 18:18:40 by rchiewli         ###   ########.fr       */
+/*   Updated: 2022/10/13 19:05:54 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_puthexanbr(int fd, unsigned long nbr, char mode)
+int	ft_puthexanbr(int fd, unsigned long nbr, char mode)
 {
 	char			*base;
 	unsigned long	nbbuffer;
@@ -35,7 +35,7 @@ static int	ft_puthexanbr(int fd, unsigned long nbr, char mode)
 	return (ret);
 }
 
-static int	ft_intputstr(int fd, char *s)
+int	ft_intputstr(int fd, char *s)
 {
 	size_t	i;
 	int		ret;
