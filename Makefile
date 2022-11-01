@@ -6,7 +6,7 @@
 #    By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/01 15:09:02 by rchiewli          #+#    #+#              #
-#    Updated: 2022/11/02 01:30:51 by rchiewli         ###   ########.fr        #
+#    Updated: 2022/11/02 01:32:38 by rchiewli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,6 +100,7 @@ clean:
 fclean: clean
 	@rm -f $(NAME) $(BNAME)
 	@make fclean -C dt_dpf/
+	@make fclean -C libftfinal/
 
 re: fclean all
 
