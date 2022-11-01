@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 17:17:15 by rchiewli          #+#    #+#             */
-/*   Updated: 2022/10/31 15:10:36 by rchiewli         ###   ########.fr       */
+/*   Updated: 2022/11/01 23:34:52 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *str)
 		rst += (str[i] - '0');
 		i++;
 	}
-	if (rst * sign < INT_MIN || rst * sign > INT_MAX)
+	if (rst * sign < INT_MIN || rst * sign > INT_MAX || str[i])
 		ft_printerrorexit();
 	return (rst * sign);
 }

@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 23:01:37 by rchiewli          #+#    #+#             */
-/*   Updated: 2022/10/31 23:48:58 by rchiewli         ###   ########.fr       */
+/*   Updated: 2022/11/02 00:28:35 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@
 # include "dt_dpf/ft_printf.h"
 # include <time.h>
 # include "libftfinal/libft.h"
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
+# include "gnlpush/get_next_line.h"
 
 typedef struct s_stk
 {
@@ -84,11 +82,11 @@ void	ft_swap(t_stk	*huax);
 void	ft_swapab(int *a, int *b);
 void	ft_sa(t_hua *hua, int mode);
 void	ft_sb(t_hua *hua, int mode);
-void	ft_ss(t_hua *hua);
+void	ft_ss(t_hua	*hua, int mode);
 void	ft_rotate(t_stk *huax, t_stk *end);
 void	ft_ra(t_hua *hua, int count, int mode);
 void	ft_rb(t_hua *hua, int count, int mode);
-void	ft_rr(t_hua *hua);
+void	ft_rr(t_hua	*hua, int mode);
 void	ft_tmpstarter(t_tmp *tmp);
 void	ft_push(t_hua *hua, t_stk *huafrom, t_stk *huato, int mode);
 void	ft_pa(t_hua	*hua, int mode);
@@ -96,7 +94,7 @@ void	ft_pb(t_hua	*hua, int mode);
 void	ft_rerotate(t_stk *huax, t_stk *end);
 void	ft_rra(t_hua *hua, int count, int mode);
 void	ft_rrb(t_hua *hua, int count, int mode);
-void	ft_rrr(t_hua *hua);
+void	ft_rrr(t_hua *hua, int mode);
 void	ft_indexsort(t_hua *hua, t_array *ray, int count);
 void	ft_indexkayap_pa(t_hua *hua, int i, int j, int mode);
 void	ft_indexkayap_pb(t_hua *hua, int i, int j, int mode);
@@ -122,5 +120,9 @@ int		ft_doreturnyone(t_hua *hua, int yone, int mode);
 void	ft_tmpfindmove(t_hua *hua, t_stk *tmpfind, int now);
 void	ft_movepaornot(t_hua *hua, int now, t_stk *tmpfind, t_stk *tmpb);
 int		ft_gaeconditionnorm(int yone, t_hua *hua, int now);
+int		ft_chkstart(int argc, char **argv, t_hua *hua, int wcount);
+void	ft_chkchk(t_hua *hua, char *buffer);
+void	ft_okko(t_hua *hua, int wcount);
+int		ft_freeprinterrorexit(char **str);
 
 #endif

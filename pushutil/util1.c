@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:33:12 by rchiewli          #+#    #+#             */
-/*   Updated: 2022/11/01 23:48:10 by rchiewli         ###   ########.fr       */
+/*   Updated: 2022/11/02 01:21:37 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,12 @@ char	**ft_argumontobuffer(int argc, char **argv, int count)
 
 	suffer = malloc((count + 1) * sizeof(char *));
 	k = 0;
-	i = 1;
+	i = 0;
 	j = 0;
-	while (i < argc)
+	while (++i < argc)
 	{
+		if (argv[i][0] == '\0')
+			ft_freeprinterrorexit(suffer);
 		splited = ft_split(argv[i], ' ');
 		j = 0;
 		while (splited[j])
@@ -63,7 +65,6 @@ char	**ft_argumontobuffer(int argc, char **argv, int count)
 			j++;
 		}
 		ft_freestrstr (splited);
-		i++;
 	}
 	return (suffer);
 }

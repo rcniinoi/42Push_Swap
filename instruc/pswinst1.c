@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 21:36:06 by rchiewli          #+#    #+#             */
-/*   Updated: 2022/10/31 15:39:24 by rchiewli         ###   ########.fr       */
+/*   Updated: 2022/11/01 02:47:23 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ void	ft_sb(t_hua *hua, int mode)
 	}
 }
 
-void	ft_ss(t_hua	*hua)
+void	ft_ss(t_hua	*hua, int mode)
 {
 	if (hua->huaa && hua->huab && hua->huaa->next && hua->huab->next)
 	{
 		ft_sb(hua, 2);
 		ft_sa(hua, 2);
-		ft_dprintf(1, "ss\n");
+		if (mode == 1)
+			ft_dprintf(1, "ss\n");
 	}
 }
 

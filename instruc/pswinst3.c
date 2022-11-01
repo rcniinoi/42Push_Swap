@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 21:31:59 by rchiewli          #+#    #+#             */
-/*   Updated: 2022/10/26 19:12:23 by rchiewli         ###   ########.fr       */
+/*   Updated: 2022/11/01 02:49:34 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,10 @@ void	ft_rrb(t_hua *hua, int count, int mode)
 		ft_dprintf(1, "rrb\n");
 }
 
-void	ft_rrr(t_hua *hua)
+void	ft_rrr(t_hua *hua, int mode)
 {
 	ft_rra(hua, hua->aval, 2);
 	ft_rrb(hua, hua->bval, 2);
-	ft_dprintf(1, "rrr\n");
+	if (mode == 1)
+		ft_dprintf(1, "rrr\n");
 }

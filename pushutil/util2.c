@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:34:14 by rchiewli          #+#    #+#             */
-/*   Updated: 2022/10/31 16:34:15 by rchiewli         ###   ########.fr       */
+/*   Updated: 2022/11/02 00:25:34 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,11 @@ void	ft_rayini(t_array *ray)
 	ray->charbuffer = NULL;
 	ray->fakearray = NULL;
 	ray->realarray = NULL;
+}
+
+int	ft_freeprinterrorexit(char **str)
+{
+	ft_freestrstr(str);
+	ft_dprintf(2, "Error\n");
+	exit (0);
 }
