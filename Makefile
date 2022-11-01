@@ -6,7 +6,7 @@
 #    By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/01 15:09:02 by rchiewli          #+#    #+#              #
-#    Updated: 2022/11/01 22:26:56 by rchiewli         ###   ########.fr        #
+#    Updated: 2022/11/02 01:30:51 by rchiewli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ chkr: $(BNAME)
 # 	@make -C ft_pf/
 
 $(NAME): $(OBJ) push_swap.h
-	# @say -v kyoko こんにちは マクドナルド ミルク バス ビール スターバックス
+	@say -v kyoko こんにちは マクドナルド ミルク バス ビール スターバックス
 	@make -C dt_dpf/
 	@make -C libftfinal/
 	$(CC) $(CFLAGS) $(OBJ) dt_dpf/libftprintf.a libftfinal/libft.a -o $(NAME)
@@ -91,7 +91,7 @@ norm:
 	norminette -R checkdefine push_swap.h
 
 clean:
-	# @say -v kanya อาบฟอกตัว ขัดทั่วกาย งามพริ้งพรายง่ายดายเหลือใจ /
+	@say -v kanya อาบฟอกตัว ขัดทั่วกาย งามพริ้งพรายง่ายดายเหลือใจ /
 	@rm -f $(OBJ) $(BOBJ)
 	@make clean -C dt_dpf/
 	@make clean -C libftfinal/
