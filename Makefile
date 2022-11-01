@@ -6,15 +6,15 @@
 #    By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/01 15:09:02 by rchiewli          #+#    #+#              #
-#    Updated: 2022/10/31 23:47:43 by rchiewli         ###   ########.fr        #
+#    Updated: 2022/11/01 22:26:56 by rchiewli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
+BNAME	= checker
 CFLAGS	= -Wall -Wextra -Werror
 CC		= gcc
-FILES	= pswmain.c \
-			quicksort.c\
+FILES	= quicksort.c\
 			./instruc/core_ins.c\
 			./instruc/core_ins2.c\
 			./instruc/pswinst1.c\
@@ -32,22 +32,35 @@ FILES	= pswmain.c \
 			./dt_dpf/util.c \
 			./dt_dpf/ft_printf.c \
 			./dt_dpf/libftmodified.c\
+			./gnlpush/get_next_line_utils.c\
+			./gnlpush/get_next_line.c
 
-# MLX_FLAG = -Lmlx -lmlx -framework OpenGL -framework AppKit
+MFILES	= pswmain.c
 
+BFILES	= checkermain.c
 
-OBJ	= $(FILES:%.c=%.o)
+OBJ	= $(FILES:%.c=%.o) $(MFILES:%.c=%.o)
 
-all:  $(NAME)
+BOBJ = $(FILES:%.c=%.o) $(BFILES:%.c=%.o)
+
+all: $(NAME)
+
+chkr: $(BNAME)
 
 # ft_pf:
 # 	@make -C ft_pf/
 
-$(NAME): $(OBJ)
-	@say -v kyoko こんにちは マクドナルド ミルク バス ビール スターバックス
+$(NAME): $(OBJ) push_swap.h
+	# @say -v kyoko こんにちは マクドナルド ミルク バス ビール スターバックス
 	@make -C dt_dpf/
 	@make -C libftfinal/
 	$(CC) $(CFLAGS) $(OBJ) dt_dpf/libftprintf.a libftfinal/libft.a -o $(NAME)
+
+$(BNAME): $(BOBJ)
+	# @say -v kyoko こんにちは マクドナルド ミルク バス ビール スターバックス
+	@make -C dt_dpf/
+	@make -C libftfinal/
+	$(CC) $(CFLAGS) $(BOBJ) dt_dpf/libftprintf.a libftfinal/libft.a -o $(BNAME)
 
 debug:
 	@make -C dt_dpf/
@@ -74,22 +87,22 @@ badvoice:
 
 norm:
 	@say -v kanya เช็คนอม หน่อยนะค่ะ /
-	norminette -R checkforbiddensourceheader $(FILES)
+	norminette -R checkforbiddensourceheader $(FILES) $(BFILES)
 	norminette -R checkdefine push_swap.h
 
 clean:
-	@say -v kanya อาบฟอกตัว ขัดทั่วกาย งามพริ้งพรายง่ายดายเหลือใจ /
-	@rm -f $(OBJ)
+	# @say -v kanya อาบฟอกตัว ขัดทั่วกาย งามพริ้งพรายง่ายดายเหลือใจ /
+	@rm -f $(OBJ) $(BOBJ)
 	@make clean -C dt_dpf/
 	@make clean -C libftfinal/
 	@rm -rf debug
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(BNAME)
 	@make fclean -C dt_dpf/
 
 re: fclean all
 
 re2: clean debug
 
-.PHONY: clean fclean all re norm love cheer badvoice
+.PHONY: clean fclean all re norm love cheer badvoice chkr

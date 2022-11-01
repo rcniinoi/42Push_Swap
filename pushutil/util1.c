@@ -6,7 +6,7 @@
 /*   By: rchiewli <rchiewli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:33:12 by rchiewli          #+#    #+#             */
-/*   Updated: 2022/10/31 16:33:41 by rchiewli         ###   ########.fr       */
+/*   Updated: 2022/11/01 23:48:10 by rchiewli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ int	ft_wordcountall(int argc, char **argv)
 			if (ft_isdigit(argv[i][j]) == 1 && \
 				ft_isdigit(argv[i][j + 1]) != 1)
 				count++;
-			else if ((argv[i][j] == '-' || argv[i][j] == '+') \
-				&& !argv[i][j + 1])
+			else if ((ft_isdigit(argv[i][j]) != 1 && argv[i][j] != '-' && \
+				argv[i][j] != '+' && argv[i][j] != ' ') || ((argv[i][j] == '-'\
+				|| argv[i][j] == '+') && isdigit(argv[i][j + 1]) != 1))
 				ft_printerrorexit();
 			j++;
 		}
